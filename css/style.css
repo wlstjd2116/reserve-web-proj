@@ -1,0 +1,162 @@
+	*{
+		list-style: none;
+		text-decoration: none;
+		border-color: collapse;
+		margin: 0px;
+		padding: 0px;
+		color: #fff;
+	}
+
+
+	.nick{
+		color: white;
+		width: auto;
+		padding-left: 24px;
+		padding-right: 24px;
+		background: rgba(0, 0, 0, 0.5);
+	}
+	.whitefont{
+		margin-top: 24px;
+		width: 330px;
+		color: #fff;
+		background: rgba(0, 0, 0, 0.5);
+		height: auto;
+		padding-left: 10px;
+	}
+
+	.whitefont > input {
+		border: none;
+		width: 100px;
+		height: 40px;
+		background: rgba(0,0,0,0);
+		color: #fff;
+		padding-left: 10px;
+	}
+	.bnt1 {
+		color: black;
+	}
+	h1 {
+		font-size: 48px;
+	}
+
+	.moongoo{
+		font-size: 20px;
+		font-weight: bold;
+		width: 300px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+		margin: auto;
+		background: rgba(0, 0, 0, 0.5);
+		color: #fff;
+	}
+	
+
+	.contents1 >a{
+		font-size: 24px;
+		font-weight: bold;
+		background: rgba(0, 0, 0, 0.);
+		color: #000;
+	}
+
+
+
+	.result{
+		font-size: 20px;
+		color: #000;
+	}
+
+	.intro_bg{
+		background-image: url("../image/int1.jpg");
+		width: 100%;
+		background-size: cover;
+		height: 1500px;
+	}
+
+	.table_center{
+		width: 50%;
+		margin-left: 25%;
+		margin-right: 15%;
+		margin-bottom: 50px;
+		text-align: center;
+	}
+
+	.table_text{
+		width: 400px;
+		text-align: center;
+	}
+	.header{
+		display: flex;
+		width: 1280px;
+		margin: auto;
+
+		height: 86px;
+	}
+
+
+	.nav{
+		display: flex;
+		justify-content: flex-end;
+		line-height: 86px;
+		width: calc(1250px);
+	}
+	
+	.nav > li{
+		margin-left:45px;
+		color: #fff;
+	}	
+	.nav > li > a{
+		color: #fff;
+	}
+
+
+
+	.amount{
+		position: :relative;
+		top:60x;
+		display: flex;
+		width: 1280px;
+		background-color: rgba(255,255,255, 0.9);
+		border-radius: 20px;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+		margin: 60px auto 0 auto;
+
+	}
+
+	.amount > li{
+		height: 132px;
+		flex: 1;
+	}
+
+	.amount > li > div {
+		text-align: center;
+		border-right: 1px solid gray;
+		margin-top:37px ;
+		height: 57px;
+
+	}
+
+	.amount > li:not(:last-child) > div{
+		border-right: 1px solid #E1E1E1;
+	}
+	.intro_text{
+		width: 100%;
+		margin: 210px auto 231px auto;
+		text-align: center;
+	}
+
+	.intro_text > h1{
+		font-size: 48px;
+		color: #fff;
+	}
+	.intro_text > h4{
+		color: #fff;
+	}
+
+	.form{
+		color: black;
+	}
+
+	h5{
+		color: black;
+	}
