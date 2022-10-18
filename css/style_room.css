@@ -1,187 +1,208 @@
-	*{
-		list-style: none;
-		text-decoration: none;
-		border-color: collapse;
-		margin: 0px;
-		padding: 0px;
-		color: #fff;
-	}
+* {
+  list-style: none;
+  text-decoration: none;
+  border-color: collapse;
+  margin: 0px;
+  padding: 0px;
+  color: black;
+}
 
+.room_wrap {
+  width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
 
-	.nick{
-		color: white;
-		width: auto;
-		padding-left: 24px;
-		padding-right: 24px;
-		background: rgba(0, 0, 0, 0.5);
-	}
-	.whitefont{
-		margin-top: 24px;
-		width: 330px;
-		color: #fff;
-		background: rgba(0, 0, 0, 0.5);
-		height: auto;
-		padding-left: 10px;
-	}
+/* T&R */
+.room_wrap .top_name {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  font-size: 2em;
+  font-style: oblique;
+}
+.room_wrap .rm_name {
+  font-size: 1.5em;
+}
+.explain {
+  font-size: 0.9em;
+}
+.room_wrap .sm_rm_name {
+  font-size: 1.2em;
+}
 
-	.whitefont > input {
-		border: none;
-		width: 100px;
-		height: 40px;
-		background: rgba(0,0,0,0);
-		color: #fff;
-		padding-left: 10px;
-	}
-	.bnt1 {
-		color: black;
-	}
-	h1 {
-		font-size: 48px;
-	}
+.room_wrap td {
+  padding: 20px 20px 0px 20px;
+}
+.nick {
+  color: white;
+  width: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.whitefont {
+  margin-top: 24px;
+  width: 330px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  height: auto;
+  padding-left: 10px;
+}
 
-	.moongoo{
-		font-size: 20px;
-		font-weight: bold;
-		width: 300px;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		text-align: center;
-		margin: auto;
-		background: rgba(0, 0, 0, 0.5);
-		color: #fff;
-	}
-	
+.whitefont > input {
+  border: none;
+  width: 100px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+  padding-left: 10px;
+}
+.bnt1 {
+  color: black;
+}
+h1 {
+  font-size: 48px;
+}
 
-	.contents1 > a{
-		font-size: 24px;
-		font-weight: bold;
-		background: rgba(0, 0, 0, 0.);
-		color: #000;
-	}
+.moongoo {
+  font-size: 20px;
+  font-weight: bold;
+  width: 300px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
 
+.contents1 > a {
+  font-size: 24px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0);
+  color: #000;
+}
 
+.result {
+  font-size: 20px;
+  color: #000;
+}
 
-	.result{
-		font-size: 20px;
-		color: #000;
-	}
+.intro_bg {
+  background-image: url("https://cdn.pixabay.com/photo/2018/03/19/21/32/nature-3241335_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+}
 
-	.intro_bg{
-		background-image: url("../img/room.jpg");
-		width: 100%;
-		height: 350px;
-	}
+.table_center {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 15%;
+  margin-bottom: 50px;
+  text-align: center;
+}
 
-	.table_center{
-		width: 50%;
-		margin-left: 25%;
-		margin-right: 15%;
-		margin-bottom: 50px;
-		text-align: center;
-	}
+.table_text {
+  width: 400px;
+  text-align: center;
+}
+.header {
+  display: flex;
+  width: 1280px;
+  margin: auto;
 
-	.table_text{
-		width: 400px;
-		text-align: center;
-	}
-	.header{
-		display: flex;
-		width: 1280px;
-		margin: auto;
+  height: 86px;
+}
 
-		height: 86px;
-	}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 86px;
+  width: calc(1250px);
+}
 
+.nav > li {
+  margin-left: 45px;
+  color: #fff;
+}
+.nav > li > a {
+  color: #fff;
+}
 
-	.nav{
-		display: flex;
-		justify-content: flex-end;
-		line-height: 86px;
-		width: calc(1250px);
-	}
-	
-	.nav > li{
-		margin-left:45px;
-		color: #fff;
-	}	
-	.nav > li > a{
-		color: #fff;
-	}
+.amount {
+  position: relative;
+  top: 60x;
+  display: flex;
+  width: 1280px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0.1, 0, 0, 0.1);
+  margin: 60px auto 0 auto;
+}
 
+.amount > li {
+  height: 132px;
+  flex: 1;
+}
 
+.amount > li > div {
+  text-align: center;
+  border-right: 1px solid gray;
+  margin-top: 37px;
+  height: 57px;
+}
 
-	.amount{
-		position: :relative;
-		top:60x;
-		display: flex;
-		width: 1280px;
-		background-color: rgba(255,255,255, 0.9);
-		border-radius: 20px;
-		box-shadow: 5px 5px 5px rgba(0.1, 0, 0, 0.1);
-		margin: 60px auto 0 auto;
+.amount > li:not(:last-child) > div {
+  border-right: 1px solid #e1e1e1;
+}
+.intro_text {
+  width: 100%;
+  margin: 210px auto 231px auto;
+  text-align: center;
+}
 
-	}
+.intro_text > h1 {
+  font-size: 48px;
+  color: #fff;
+}
+.intro_text > h4 {
+  color: #fff;
+}
 
-	.amount > li{
-		height: 132px;
-		flex: 1;
-	}
+.form {
+  color: black;
+}
 
-	.amount > li > div {
-		text-align: center;
-		border-right: 1px solid gray;
-		margin-top:37px ;
-		height: 57px;
+h5 {
+  color: black;
+}
 
-	}
+.room_rs {
+  position: relative;
+  margin: 30px auto;
+}
 
-	.amount > li:not(:last-child) > div{
-		border-right: 1px solid #E1E1E1;
-	}
-	.intro_text{
-		width: 100%;
-		margin: 210px auto 231px auto;
-		text-align: center;
-	}
+.room_rs > a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  border-bottom: 1px solid black;
+}
 
-	.intro_text > h1{
-		font-size: 48px;
-		color: #fff;
-	}
-	.intro_text > h4{
-		color: #fff;
-	}
-
-	.form{
-		color: black;
-	}
-
-	h5{
-		color: black;
-	}
-
-	.room_rs {
-		position: relative;
-		margin: 30px auto;
-	}
-
-	.room_rs > a {
-		font-size: 24px;
-		font-weight: bold;
-		color: #000;
-		border-bottom: 1px solid black;
-	}
-
-	.room_name {
-		background-color: rgba(10, 13, 161, 0.4);
-		border-radius: 20px; 
-		position: relative; 
-		width: 500px;
-		height:35px;
-		margin: 30px auto;
-		padding: 33px 0;
-		font-size: 25px;
-		font-weight: bold;
-		text-align: center;
-	}
-
+.room_name {
+  background-color: rgba(10, 13, 161, 0.4);
+  border-radius: 20px;
+  position: relative;
+  width: 500px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 33px 0;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}

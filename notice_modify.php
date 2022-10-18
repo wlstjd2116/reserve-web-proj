@@ -5,7 +5,7 @@
     $subject = $_POST["subject"];
     $content = $_POST["content"];
           
-    $con = mysqli_connect("localhost", "root", "", "sample");
+    $con = mysqli_connect("localhost", "root", "", "test");
     $sql = "update notice set subject='$subject', content='$content' ";
     $sql .= " where num=$num";
     mysqli_query($con, $sql);
