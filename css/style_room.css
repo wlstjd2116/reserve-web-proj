@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "AppleSDGothicNeoM";
+  src: url("../font/AppleSDGothicNeoM.ttf");
+}
+
 * {
   list-style: none;
   text-decoration: none;
@@ -5,6 +10,7 @@
   margin: 0px;
   padding: 0px;
   color: black;
+  font-family: "AppleSDGothicNeoM";
 }
 
 .room_wrap {
@@ -12,6 +18,7 @@
   height: 500px;
   margin: 0 auto;
   margin-top: 100px;
+  color: black;
 }
 
 /* T&R */

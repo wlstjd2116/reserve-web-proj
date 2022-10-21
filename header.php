@@ -24,7 +24,8 @@ if (isset($_SESSION["userid"])) {
                     <li class="nav-item"><a class="nav-link" href="admin.php">MNG_PG</a> </li>
                     <?php }
                 if (!$userid) { ?>                
-                        <li class="nav-item"><a class="nav-link" href="member_form.php">회원가입 </a> </li>
+                <li class="nav-item"><a class="nav-link" href="login_form.php">LOGIN</a></li>
+                        
                     <?php } else {$logged = $userid . "님"; ?>
                 
                 <li class="nav-item"><a class="nav-link" onclick="window.open('./survey.php','설문조사','left=200,top=200, scrollbars=no, toolbars=no, width=180, height=230')"border="0">SURVEY </a></li>
@@ -32,18 +33,9 @@ if (isset($_SESSION["userid"])) {
                 <li class="nav-item"><a class="nav-link" href="member_modify_form.php">정보수정</a></li>
                 <li class="nav-item"><a class="nav-link" href="logout.php">로그아웃</a></li>
 <?php }
+                if (!$userid) { ?>
+                <li class="nav-item"><a class="nav-link" href="member_form.php">회원가입 </a> </li> 
+                     <?php }
                 ?>
-                <li class="nav-item"><?php if (!$userid) { ?>
-                    </ul>
-                        <form id="frm" name="frm" method="post" action="login.php">
-                            <div class="whitefont">
-                            ID:<input type="textbox" name="id" placeholder="ID">
-                            PW:<input type="password" name="pass" placeholder="PW">
-                            <button class="bnt1" onclick="javascript:document.frm.submit();">로그인</button>
-                            </div>
-                        </form>
-                    </li>   
-                                    
-                     <?php } ?>
 						
 			</div>

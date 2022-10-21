@@ -28,7 +28,7 @@ $content = $_POST["content"];
 $subject = htmlspecialchars($subject, ENT_QUOTES);
 $content = htmlspecialchars($content, ENT_QUOTES);
 
-$regist_day = date("Y-m-d (H:i)"); // 현재의 '년-월-일-시-분'을 저장
+$regist_day = date("Y-m-d"); // 현재의 '년-월-일을 저장
 
 $upload_dir = "./data/";
 

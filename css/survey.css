@@ -1,85 +1,140 @@
+@font-face {
+  font-family: "AppleSDGothicNeoM";
+  src: url("../font/AppleSDGothicNeoM.ttf");
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+  border-color: collapse;
+  margin: 0px;
+  padding: 0px;
+  color: black;
+  font-family: "AppleSDGothicNeoM";
+}
 body {
-	margin:0;
+  margin: 0;
 }
 
 A:link {
-	COLOR: #000000; TEXT-DECORATION: none
+  color: #000000;
+  text-decoration: none;
 }
 A:visited {
-	COLOR: #393939; TEXT-DECORATION: none
+  color: #393939;
+  text-decoration: none;
 }
 A:hover {
-	COLOR: #393939; TEXT-DECORATION: none
+  color: #393939;
+  text-decoration: none;
 }
 TD {
-	FONT-SIZE: 8pt; LINE-HEIGHT: 15pt; FONT-FAMILY: Gulim
+  font-size: 8pt;
+  line-height: 15pt;
+  font-family: Gulim;
 }
 A.navigation:visited {
-	COLOR: #000000; TEXT-DECORATION: none; none: 
+  color: #000000;
+  text-decoration: none;
+  none: ;
 }
 A.navigation:hover {
-	FONT-WEIGHT: bold; COLOR: #393939; TEXT-DECORATION: underline
+  font-weight: bold;
+  color: #393939;
+  text-decoration: underline;
 }
 A.navigation:active {
-	COLOR: #000000; none: 
+  color: #000000;
+  none: ;
 }
 A.navigation:link {
-	COLOR: #000000; TEXT-DECORATION: none
+  color: #000000;
+  text-decoration: none;
 }
 A.navigat:visited {
-	COLOR: #c85102; TEXT-DECORATION: none; none: 
+  color: #c85102;
+  text-decoration: none;
+  none: ;
 }
 A.navigat:hover {
-	COLOR: #f8ba25; TEXT-DECORATION: underline
+  color: #f8ba25;
+  text-decoration: underline;
 }
 A.navigat:active {
-	COLOR: #c85102; TEXT-DECORATION: none
+  color: #c85102;
+  text-decoration: none;
 }
 A.navigat:link {
-	COLOR: #c85102; TEXT-DECORATION: none
+  color: #c85102;
+  text-decoration: none;
 }
 TD {
-	FONT-SIZE: 9pt
+  font-size: 9pt;
 }
 TD.Column {
-	WIDTH: 500px; BACKGROUND-COLOR: #aed6f3; TEXT-ALIGN: right
+  width: 500px;
+  background-color: #aed6f3;
+  text-align: right;
 }
 .Input {
-	MARGIN-LEFT: 0px; WIDTH: 100px
+  margin-left: 0px;
+  width: 100px;
 }
 .Input01 {
-	MARGIN-LEFT: 5px; WIDTH: 250px
+  margin-left: 5px;
+  width: 250px;
 }
 .Input02 {
-	MARGIN-LEFT: 5px; WIDTH: 350px
+  margin-left: 5px;
+  width: 350px;
 }
 TABLE.Sheet {
-	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 0px; FONT-FAMILY: Arial; BORDER-RIGHT-WIDTH: 0px
+  border-top-width: 0px;
+  border-left-width: 0px;
+  font-size: 8pt;
+  border-bottom-width: 0px;
+  font-family: Arial;
+  border-right-width: 0px;
 }
 TD.Head {
-	BORDER-RIGHT: white 0px solid; BORDER-TOP: white 0px solid; BORDER-LEFT: white 1px solid; COLOR: white; BORDER-BOTTOM: white 1px solid; BACKGROUND-COLOR: #a5a5a5
+  border-right: white 0px solid;
+  border-top: white 0px solid;
+  border-left: white 1px solid;
+  color: white;
+  border-bottom: white 1px solid;
+  background-color: #a5a5a5;
 }
 TD.Data {
-	BORDER-RIGHT: #a5a5a5 0px solid; BORDER-TOP: #a5a5a5 0px solid; BORDER-LEFT: #a5a5a5 1px solid; COLOR: black; BORDER-BOTTOM: #a5a5a5 1px solid; BACKGROUND-COLOR: white
+  border-right: #a5a5a5 0px solid;
+  border-top: #a5a5a5 0px solid;
+  border-left: #a5a5a5 1px solid;
+  color: black;
+  border-bottom: #a5a5a5 1px solid;
+  background-color: white;
 }
 TD.First {
-	BORDER-LEFT-WIDTH: 0px
+  border-left-width: 0px;
 }
 TD.GrayData {
-	BACKGROUND-COLOR: #f4f4f4
+  background-color: #f4f4f4;
 }
 TD.Center {
-	TEXT-ALIGN: center
+  text-align: center;
 }
 .SubMenu {
-	HEIGHT: 20px
+  height: 20px;
 }
 .menu {
-	FONT: 9pt/140% "±¼¸²"; COLOR: #555555
+  font: 9pt/140% "ï¿½ï¿½ï¿½ï¿½";
+  color: #555555;
 }
 .menu A {
-	FONT: 9pt/140% "±¼¸²"; COLOR: #555555; TEXT-DECORATION: none
+  font: 9pt/140% "ï¿½ï¿½ï¿½ï¿½";
+  color: #555555;
+  text-decoration: none;
 }
 .menu A:hover {
-	FONT: bold 9pt/140% "±¼¸²"; COLOR: #003399; TEXT-DECORATION: underline
+  font: bold 9pt/140% "ï¿½ï¿½ï¿½ï¿½";
+  color: #003399;
+  text-decoration: underline;
 }

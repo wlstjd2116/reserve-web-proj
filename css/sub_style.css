@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "AppleSDGothicNeoM";
+  src: url("../font/AppleSDGothicNeoM.ttf");
+}
+
 * {
   list-style: none;
   text-decoration: none;
@@ -5,8 +10,8 @@
   margin: 0px;
   padding: 0px;
   color: black;
+  font-family: "AppleSDGothicNeoM";
 }
-
 .nick {
   color: white;
   width: auto;

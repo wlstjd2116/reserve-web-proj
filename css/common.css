@@ -5,3 +5,11 @@
 .navbar-nav {
   text-align: center;
 }
+
+* {
+  list-style: none;
+  text-decoration: none;
+  border-color: collapse;
+  margin: 0px;
+  padding: 0px;
+}

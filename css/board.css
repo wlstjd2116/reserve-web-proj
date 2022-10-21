@@ -1,4 +1,18 @@
 /* 게시판 글쓰기(board_form.php) */
+@font-face {
+  font-family: "AppleSDGothicNeoM";
+  src: url("../font/AppleSDGothicNeoM.ttf");
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+  border-color: collapse;
+  margin: 0px;
+  padding: 0px;
+  color: black;
+  font-family: "AppleSDGothicNeoM";
+}
 #board_box {
   position: relative;
   width: 700px;

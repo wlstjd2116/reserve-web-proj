@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 <title>T&R 룸소개</title>
 		<link rel="stylesheet" type="text/css" href = "./css/style_room.css">
+        <link rel="stylesheet" type="text/css" href = "./css/common.css">
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea44ecb0969a18388ea307ad38863375&libraries=services"></script>
 <head>
 </head>

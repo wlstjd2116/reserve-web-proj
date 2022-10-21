@@ -152,8 +152,12 @@ $resultHouse = mysqli_query($con, $sql);
 </body>
 <script src="jquery.bpopup2.min.js" type="text/javascript"></script>
 <script>
+	
 	function execReservation(houseID, houseName)
 	{
+		<?php if ($userid == "") { ?>
+		alert("먼저 로그인을 해주세요."); return false;
+		<?php } ?>
 		$("#insert_houseid").val(houseID);
 		$("#divHouseName").html(houseName);
 
