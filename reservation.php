@@ -10,7 +10,7 @@ $sql = "select A.house_id, A.house_name, A.house_address, A.contents, count(B.rs
    FROM tb_house A left outer join tb_house_reservation B
    on A.house_id = B.house_id
    group by A.house_id
-   ORDER BY A.house_id asc;";
+   ORDER BY A.house_id asc";
 $resultHouse = mysqli_query($con, $sql);
 
 //$isReservation = false;
