@@ -18,96 +18,87 @@
 
    			</div></center>
 <script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };  
+// 마커 이미지의 이미지 주소입니다
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
 
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); 
+function getData(callback){
+        return new Promise(function (resolve, reject){
+            setTimeout(function (){
+                $.get(`https://apis.data.go.kr/B551011/KorService/areaBasedList?numOfRows=30&MobileOS=WEB&MobileApp=webp&serviceKey=yUEUsLFTDX6iYs09QHj2GDFRUCYvs9%2BWVZOQzeTsZZh%2B4iNC%2F3Noxf0y0dI10Q6wYD0O0y0BYFH9nsFvRuFZaQ%3D%3D&_type=json&areaCode=35&sigunguCode=2`, 
+                function (data) {
+                    if(data){
+                        var tour_content = ``;
+                        console.log(data)   ;
+                        positions = [];
 
-// 주소-좌표 변환 객체를 생성합니다
-var geocoder = new kakao.maps.services.Geocoder();
-
-// 주소로 좌표를 검색합니다
-geocoder.addressSearch('안동시 송천길 135', function(result, status) {
-
-    // 정상적으로 검색이 완료됐으면 
-     if (status === kakao.maps.services.Status.OK) {
-
-        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-        // 결과값으로 받은 위치를 마커로 표시합니다
-        var marker = new kakao.maps.Marker({
-            map: map,
-            position: coords
-        });
-
-        // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;color:black;">자연룸</div>'
-        });
-        infowindow.open(map, marker);
-
-        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
-    } 
-});    
-
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-// 주소-좌표 변환 객체를 생성합니다
-var geocoder = new kakao.maps.services.Geocoder();
-
-    $.ajax({
-	url: "https://apis.data.go.kr/B551011/KorService/areaBasedList?MobileOS=WEB&MobileApp=webp&serviceKey=yUEUsLFTDX6iYs09QHj2GDFRUCYvs9%2BWVZOQzeTsZZh%2B4iNC%2F3Noxf0y0dI10Q6wYD0O0y0BYFH9nsFvRuFZaQ%3D%3D&_type=json&areaCode=35&sigunguCode=2",
-	dataType: "json",
-    type : 'GET',
-    // beforeSend : function (request) {
-    //     request.setRequestHeader("AJAX", "true");
-    // },
-	success : function(data) {
-		console.log("success: ", data);
-        var num = data.response.body.items.item.length;
-        var addrList = [];
-        if(num > 0){
-            var tour_content = ``;
-            for(var i=0; i<num; i++){
-                var dir = data.response.body.items.item[i];
-                var addr = dir.addr1;
-                var img1 = dir.firstimage;
-                var title = dir.title;
-                
-                
-                addrList.push(addr);
-         
-                tour_content += `
-                <table>
-                <tr>
-                    <td><center><img src=`+ img1 +` width="500px" height="300px"></center>
+                        for(var i=0; i<data.response.body.items.item.length; i++){
+                            var dir = data.response.body.items.item[i];
+                            var addr = dir.addr1;
+                            var mapx = dir.mapx;
+                            var mapy = dir.mapy;
+                            var img1 = dir.firstimage;
+                            var title = dir.title;
+                            
+                            positions.push(
+                                {title: title, latlng: new kakao.maps.LatLng(mapy, mapx)} 
+                                );
                     
-                 </tr>
-                 <br><br><br><br><br><br>
-                 <tr>
-                    <td>
-                        <span class = "rm_name" ><b>`+title+`</b>
-                   </td>
-                 </tr>
-                </table>`;
-            }
+                            tour_content += `
+                            <table>
+                            <tr>
+                                <td><center><img src=`+ img1 +` width="500px" height="300px"></center>
+                                
+                            </tr>
+                            <br><br><br><br><br><br>
+                            <tr>
+                                <td>
+                                    <span class = "rm_name" ><b>`+title+`</b>
+                            </td>
+                            </tr>
+                            </table>`;
+                        }
+                        $('.tour_content').html('');
+                        $('.tour_content').html(tour_content);
+                        resolve(data);
+                    }
+                    reject(new Error("Request is failed"));
+                })
+            });
+        }).then(function (tabledata){
+            console.log("둘번째");
+            console.log(positions);
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+    mapOption = { 
+        center: new kakao.maps.LatLng(35.841227504921, 129.29053241115), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
 
-            $('.tour_content').html('');
-            $('.tour_content').html(tour_content);
-        }
-        console.log(addrList);
-	},
-	error: function (request, status, error) {
-		console.log("error: ", error);
-	}
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+ 
+// 마커 이미지의 이미지 주소입니다
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+console.log(positions);
+for (var i = 0; i < positions.length; i ++) {
+    
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(24, 35); 
+    
+    // 마커 이미지를 생성합니다    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+    
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng, // 마커를 표시할 위치
+        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        image : markerImage // 마커 이미지 
+    });
+}
+        }).catch(function (err){
+            console.log(err);
+        });
+    }
 
-});  
-
+    getData();
 </script>
    	</body>
