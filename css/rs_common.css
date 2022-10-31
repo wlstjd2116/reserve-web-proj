@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "AppleSDGothicNeoM";
+  src: local("./font/AppleSDGothicNeoM.ttf");
+}
+
+@font-face {
+  font-family: "AppleNeoL";
+  src: local("./font/AppleSDGothicNeoL.ttf");
+}
+.nav-item {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.navbar-nav {
+  text-align: center;
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+  border-color: collapse;
+  margin: 0px;
+  padding: 0px;
+  font-family: "AppleSDGothicNeoM";
+}
+.datePick {
+  border-radius: 5px;
+  border: 1px solid silver;
+  width: 150px;
+  height: 35px;
+  border-color: rgba(158, 158, 158, 0.8);
+  margin-left: 15px;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.datepicker {
+  border-radius: 5px;
+  border: 1px solid silver;
+  width: 150px;
+  height: 35px;
+  border-color: rgba(158, 158, 158, 0.8);
+  margin-left: 15px;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.wrap {
+  width: 100%;
+  height: auto;
+  background-color: whitesmoke;
+}
+
+.rs_wrap {
+  width: 768px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+  background-color: white;
+}
+
+.dtTitle {
+  padding-left: 15px;
+  font-size: 2em;
+}
+
+.show_room {
+  display: inline-block;
+  width: 100%;
+  height: 1000px;
+  margin-top: 30px;
+}
+
+.non {
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+  z-index: 99;
+}
+
+.sr_box {
+  width: 97%;
+  margin: 10px auto;
+  padding: 16px;
+  padding-top: 25px;
+  height: 300px;
+}
+
+.sr_pic {
+  display: inline-block;
+  width: 214px;
+  height: 246px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.sr_pic_non {
+  display: inline-block;
+  width: 214px;
+  height: 246px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.sr_pic_non img {
+  position: relative;
+  left: 100%;
+  margin-left: -200%;
+  filter: brightness(50%);
+}
+
+.sr_pic img {
+  position: relative;
+  left: 100%;
+  margin-left: -200%;
+}
+
+.sr_title {
+  margin-left: 15px;
+  position: absolute;
+  display: inline-block;
+  font-size: 30px;
+  color: rgb(39, 39, 39);
+  font-weight: bolder;
+}
+
+.sr_pay {
+  margin-left: 330px;
+  display: inline-block;
+  font-size: 30px;
+  color: rgb(39, 39, 39);
+  font-weight: bolder;
+}
+
+.sr_content {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 15px;
+  display: inline-block;
+  font-size: 20px;
+  color: rgb(39, 39, 39);
+  font-weight: bolder;
+}
+
+.sr_people {
+  margin-top: 195px;
+  margin-left: 355px;
+  position: absolute;
+  display: inline-block;
+  color: rgb(39, 39, 39);
+  font-weight: bolder;
+}
+
+.sm-span {
+  font-size: 13px;
+  font-family: "AppleNeoM";
+}
+
+.box-after {
+  width: 300px;
+  display: none;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.btnSearch {
+  margin-left: 15px;
+}

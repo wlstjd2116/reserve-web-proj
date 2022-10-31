@@ -78,31 +78,7 @@ if (!$result) {
 ?>
             </div>
         </div>
-        <div class = "amount">
-            <li>
-                <div>
-                    <div class="contents1"> <a href="room01.php">자연룸</a></div>
-                    <div class="result">자연과 함께하는 자연룸</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <div class="contents1" ><a href="room02.php">마운틴룸</a></div>
-                    <div class="result">산과 가까이, 마운틴룸</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <div class="contents1"> <a href="room03.php">바다룸</a></div>
-                    <div class="result">바다향 느낄 수 있는 바다룸</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <div class="contents1"> <a href="room04.php">냇가룸</a></div>
-                    <div class="result">계곡과 함께 즐기는 냇가룸</div>
-                </div>
-            </li>
-    </div>
+</div>
+        <?php include "./footer.php"; ?>
 </body>
 </html>

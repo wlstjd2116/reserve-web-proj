@@ -29,7 +29,6 @@ if (isset($_SESSION["userid"])) {
                 <li class="nav-item"><a class="nav-link" href="pensionHome.php">HOME</a></li>
                 <li class="nav-item"><a class="nav-link" href="produce_room.php">ROOM</a></li>
                 <li class="nav-item"><a class="nav-link" href="reservation.php">RESERVE </a></li>
-                <li class="nav-item"><a class="nav-link" href="reservation_status.php">RS_STATUS</a></li>
                 <li class="nav-item"><a class="nav-link" href="tourist.php">TOURIST</a></li>
                 <li class="nav-item"><a class="nav-link" href="board_list.php">BOARD</a></li>
                 <li class="nav-item"><a class="nav-link" href="notice_list.php">NOTICE</a></li>

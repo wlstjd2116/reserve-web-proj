@@ -5,13 +5,27 @@ if (isset($_SESSION["userid"])) {
 } else {
   $userid = "";
 }
+
+//if($_SESSION["userid"]){
+?>
+  		<!--<script>
+  			//location.replace("reservation.php");
+  		</script>-->
+  		<?php
+//exit;
+// }
 ?>
 <!doctype html>
 <meta charset="utf-8">
-<title>자연룸</title>
+<title>네이처</title>
 		<link rel="stylesheet" type="text/css" href = "./css/style_room.css">
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea44ecb0969a18388ea307ad38863375&libraries=services"></script>
+		<link rel="stylesheet" type="text/css" href = "./css/common.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <head>
+ 
 </head>
 <body>
 	<div class ="wrap">
@@ -50,84 +64,65 @@ if (isset($_SESSION["userid"])) {
 
    				</div>
    			</div>
-   			<center>
-   			 <div class="room_name">				   					
-   				프라이빗한 휴식은 자연룸에서
-   			</div></center>
+<div class="r_wrap">
+	<div class = "rm_wrap">
+		<div class = "rm_title">
+			<span>네이처(Nature)</span>
+		</div>
+		
+		
+		<center><img src="./room/na1.jpg" width="600px" height="320px"></center>
+		<div class="rm_explain">
+		네이처(Nature)는<br>
 
-   			<center><div class="room_rs"><h2><b style="color:black;">위치확인</b></h2></div>
-				   <div id="map" style="width:500px;height:350px;"></div></center>
+		영어로 자연을 의미합니다<br>
+		<br><br>
+		자연친화적인 인테리어와 조용한 분위기,<br>
+		프라이빗한 실내바비큐장과 스파(Spa)는<br>
+		고객들의 프라이버시를 더욱 더 안전하게 지켜주는 <br>
+		매력적인 룸입니다<br>
+		<br>
 
-	   			<center><img src="./room/na1.jpg" width="1000px" height="600px"></center>
-	   			<center><img src="./room/na2.jpg" width="1000px" height="600px"></center>
+		베르데(Verde)에서<br>
+		사랑하는 사람과 매력적인 아침을 맞이하세요!<br>
+		<br><br>
+		<a href="#" class = "btn btn-dark">실시간 예약</a>
+		<br>
+		<br><br><br>
+		<strong>객실정보</strong><br>
+
+		원룸, 스파, 개별바비큐<br>
+		<strong>가능인원</strong><br>
+
+		기준 2명 / 최대 4명<br>
+		<strong>입실안내</strong><br>
+
+		오후3시 이후 입실 / 오전 11시 이전 퇴실<br>
+
+		<strong>구비시설</strong><br>
+
+		<strong>VILLA</strong><br>
+
+		침대Q 1개, 호텔식침구, 스파, LED TV, 에어컨, 와이파이, 소화기<br>
+
+		<strong>KITCHEN </strong><br>
+
+		아일랜드식탁, 냉장고, 전자렌지, 전기밥솥, 인덕션, 식기류, 조리기구<br>
+
+		<strong>BATHROOM</strong><br>
+
+		헤어샴푸, 린스, 헤어드라이기, 타올, 휴지,각티슈
+		</div> 
+		<div class ="show_img">
+		<center><img src="./room/na2.jpg" width="1000px" height="600px"></center>
 	   			<center><img src="./room/na3.jpg" width="1000px" height="600px"></center>
 	   			<center><img src="./room/na4.jpg" width="1000px" height="600px"></center>
 	   			<center><img src="./room/na5.jpg" width="1000px" height="600px"></center>
    			<center><div class="room_rs">
-   				<a href="reservation.php">예약하러 가기</a></div></center>
-   		<div class = "amount" style="border: 2px solid #f2f2f2;">
-            <li>
-                <div>
-                    <div class="contents1"> <a href="room01.php">자연룸</a></div>
-                    <div class="result">자연과 함께하는 자연룸</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <div class="contents1" ><a href="room02.php">마운틴룸</a></div>
-                    <div class="result">산과 가까이, 마운틴룸</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <div class="contents1"> <a href="room03.php">바다룸</a></div>
-                    <div class="result">바다향 느낄 수 있는 바다룸</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <div class="contents1"> <a href="room04.php">냇가룸</a></div>
-                    <div class="result">계곡과 함께 즐기는 냇가룸</div>
-                </div>
-            </li>
-    </div>
+		</div>
+	</div>
+</div> <!-- wrap end -->
+	   			
+<?php include "./footer.php"; ?>
    		</div>
-		   <script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };  
-
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-// 주소-좌표 변환 객체를 생성합니다
-var geocoder = new kakao.maps.services.Geocoder();
-
-// 주소로 좌표를 검색합니다
-geocoder.addressSearch('안동시 송천길 135', function(result, status) {
-
-    // 정상적으로 검색이 완료됐으면 
-     if (status === kakao.maps.services.Status.OK) {
-
-        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-        // 결과값으로 받은 위치를 마커로 표시합니다
-        var marker = new kakao.maps.Marker({
-            map: map,
-            position: coords
-        });
-
-        // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;color:black;">자연룸</div>'
-        });
-        infowindow.open(map, marker);
-
-        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
-    } 
-});    
-</script>
    	</body>
