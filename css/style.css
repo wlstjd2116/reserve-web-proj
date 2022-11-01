@@ -74,10 +74,8 @@ h1 {
 
 .intro_bg {
   display: block;
-  background-image: url("../image/int1.jpg");
   width: 100%;
-  background-size: cover;
-  height: 1500px;
+  height: auto;
   position: relative;
 }
 

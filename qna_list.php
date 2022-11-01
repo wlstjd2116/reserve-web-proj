@@ -181,8 +181,6 @@ if ($total_page >= 2 && $page != $total_page) {
   echo "<li>&nbsp;</li>";
 }
 ?>
-			</ul> <!-- page -->	    	
-			<ul class="buttons">
 				<li>
 					<button onclick="location.href='qna_form.php'" class="btn btn-primary" style="color:white; float:right;">글쓰기</button>
 				</li>
@@ -194,5 +192,5 @@ if ($total_page >= 2 && $page != $total_page) {
 		<!-- intro end -->
 
 
-</body>
+<?php include "./footer.php"; ?></body>
 </html>

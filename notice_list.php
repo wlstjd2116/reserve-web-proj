@@ -182,8 +182,6 @@ if ($total_page >= 2 && $page != $total_page) {
   echo "<li>&nbsp;</li>";
 }
 ?>
-			</ul> <!-- page -->	    	
-			<ul class="buttons">
 				<li>
 <?php if ($userid == "admin") { ?>
 					<button onclick="location.href='notice_form.php'" class="btn btn-primary" style="color:white; float:right;">글쓰기</button>
@@ -199,5 +197,5 @@ if ($total_page >= 2 && $page != $total_page) {
 		<!-- intro end -->
 
 
-</body>
+<?php include "./footer.php"; ?></body>
 </html>

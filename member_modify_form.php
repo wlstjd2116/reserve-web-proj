@@ -142,6 +142,52 @@ mysqli_close($con);
         	</div> <!-- join_box -->
         </div> <!-- main_content -->
 </section>
+<?php include "./footer.php"; ?>
+
+<div id="inputWrap">
+	<font size="8" style=""><b>M</b>ember <br><b>I</b>nput <br> <b>P</b>age</font> 
+		<br><br><br>
+		<form  name="member_form" method="post" action="member_modify.php?id=<?= $userid ?>">
+  
+  <div class="form-group">
+    <label for="id" style="float:left;"><font style="color:red;">*</font> ID:</label>
+    <input type="button" class="btn btn-secondary" style="float:right; margin-bottom:5px;" onClick="dupCheck();" value="ID Check">
+    <input type="id" class="form-control" placeholder="Enter ID" name="id" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="pwd" style="float:left;"><font style="color:red;">*</font> Password:</label>
+    <input type="password" class="form-control" placeholder="Enter password" name="pwd" required  onkeyup="validCheck();">
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  
+  <div class="form-group">
+    <label for="checkPwd" style="float:left;"><font style="clr:red;">*</font> Pwd Check:</label>
+    <input type="password" class="form-control" placeholder="Enter re-password" name="checkPwd" require
+    onkeyup="validCheck();">
+    <span id="warning" style="color:red;"></span>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  
+  <div class="form-group">
+    <label for="name" style="float:left;"><font style="color:red;">*</font> name:</label>
+    <input type="text" class="form-control" placeholder="Enter name" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email" style="float:left;"><font style="color:red;">*</font> email:</label>
+    <input type="text" class="form-control" placeholder="Enter email" name="email" required>
+  </div>
+  
+  <br>
+  <input type="button" class="btn btn-primary" onClick="nullCheck();" value="Submit">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="reset" class="btn btn-secondary">Reset</button>
+</form>
+</div>
+<?php include "./footer.php"; ?></body>
 </body>
 </html>
 

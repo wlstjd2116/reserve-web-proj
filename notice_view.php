@@ -78,5 +78,5 @@ mysqli_query($con, $sql);
 		</ul>
 	</div> <!-- board_box -->
 </section> 
-</body>
+<?php include "./footer.php"; ?></body>
 </html>

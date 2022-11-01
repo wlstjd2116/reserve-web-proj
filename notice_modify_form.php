@@ -94,5 +94,5 @@ $file_name = $row["file_name"];
 	    </form>
 	</div> <!-- board_box -->
 </section> 
-</body>
+<?php include "./footer.php"; ?></body>
 </html>

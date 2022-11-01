@@ -1,33 +1,3 @@
-<?php
-error_reporting(0);
-ini_set("display_errors", 0);
-$date = $_POST["datepicker"];
-$men = $_POST["men"];
-
-$con = mysqli_connect("localhost", "root", "", "test");
-
-// $date의 값에 따라 쿼리문 구분.
-if (empty($date)) {
-  $sql = " select * from tb_house";
-} else {
-  $sql =
-    "select * from tb_house where house_id 
-    not in (select DISTINCT house_id from tb_house_reservation where rs_date = '" .
-    $date .
-    "');";
-}
-$result = mysqli_query($con, $sql);
-
-$sSql =
-  "select *
-from tb_house
-where (house_id in (select distinct house_id from tb_house_reservation where rs_date = '" .
-  $date .
-  "') );";
-$sresult = mysqli_query($con, $sSql);
-
-//$isReservation = false;
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,6 +21,39 @@ $sresult = mysqli_query($con, $sSql);
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.3,npm/fullcalendar@5.11.3/locales-all.min.js,npm/fullcalendar@5.11.3/locales-all.min.js,npm/fullcalendar@5.11.3/main.min.js"></script>
 <script src="jquery.bpopup2.min.js" type="text/javascript"></script>
+<?php
+error_reporting(0);
+ini_set("display_errors", 0);
+$date = $_POST["datepicker"];
+$men = $_POST["men"];
+
+$con = mysqli_connect("localhost", "root", "", "test");
+
+// $date의 값에 따라 쿼리문 구분.
+if (empty($date)) {
+  $sql = " select * from tb_house";
+} else {
+  $sql =
+    "select * from tb_house where house_id 
+    not in (select DISTINCT house_id from tb_house_reservation where rs_date = '" .
+    $date .
+    "');"; ?>
+    <script>$('.datepicker').val(<?= $date ?>);
+    </script>
+    <?php
+}
+$result = mysqli_query($con, $sql);
+
+$sSql =
+  "select *
+from tb_house
+where (house_id in (select distinct house_id from tb_house_reservation where rs_date = '" .
+  $date .
+  "') );";
+$sresult = mysqli_query($con, $sSql);
+
+//$isReservation = false;
+?>
 </head>
 <body>
 <?php include "./header_other.php"; ?>
@@ -59,7 +62,6 @@ $sresult = mysqli_query($con, $sSql);
       <div class = "dtTitle"><strong>T&R HOUSE</strong></div><br>
          <!-- 날짜 선택 -->
       <form name = "form1" action="reservation.php" method = "post">
-         <!-- <a href="popup.php" onclick="window.open(this.href,'선택창', width = 1920, height = 1080); return false;"><input type="text" name="datePick" class="datePick" placeholder ="날짜"/></a> -->
          <input type="text" class="datepicker" name="datepicker">
          <input type="text" name="men" class="datePick" placeholder ="인원수"/>
          <input type="submit" value="조회" class = "btnSearch btn btn-dark btn-sm"> 
@@ -130,6 +132,7 @@ $sresult = mysqli_query($con, $sSql);
 			<button style="background-color:gray; color:white; border:1px solid #222222" onclick="javascript:saveReservation();">예약하기</button>
 		</div>
 	</div><!-- /.box -->
+            </div>
    <?php include "./footer.php"; ?>
 <script>
    // datepicker 
@@ -197,6 +200,7 @@ let day = today.getDay();  // 요일
 let sumToday = year + "-" + month +"-"+ date;
 
 $('.datepicker').val(sumToday);
+$('.datepicker1').val(sumToday);
 </script>
 </html>
 

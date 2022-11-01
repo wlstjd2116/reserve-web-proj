@@ -85,5 +85,5 @@ $file_name = $row["file_name"];
 	</div> <!-- board_box -->
 </section> 
 
-</body>
+<?php include "./footer.php"; ?></body>
 </html>

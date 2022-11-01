@@ -76,5 +76,5 @@ if (isset($_SESSION["username"])) {
 	    </form>
 	</div> <!-- board_box -->
 </section> 
-</body>
+<?php include "./footer.php"; ?><?php include "./footer.php"; ?><?php include "./footer.php"; ?></body>
 </html>

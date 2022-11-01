@@ -40,7 +40,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 <body>
-<?php include "./header_other.php"; ?>
+<!-- <?php include "./header_other.php"; ?> -->
 <script>
 	var Dflag = false;
 	var Pflag = false; 
@@ -128,7 +128,6 @@
   <button type="reset" class="btn btn-secondary">Reset</button>
 </form>
 </div>
-<?php include "./footer.php"; ?>
-</body>
+<?php include "./footer.php"; ?></body>
 </html>
 

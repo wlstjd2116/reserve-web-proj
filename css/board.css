@@ -16,6 +16,7 @@
 #board_box {
   position: relative;
   width: 700px;
+  height: 700px;
   padding: 5px 15px;
   margin: 30px auto;
   /* background-color: rgba(255, 255, 255, 0.6); */
@@ -80,6 +81,7 @@
 /* 게시판 목록보기(board_list.php) */
 #list_box {
   width: 1200px;
+  height: 700px;
   margin: 0 auto;
 }
 #board_list {

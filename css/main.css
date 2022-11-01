@@ -1,7 +1,11 @@
 /* 메인 콘텐트 */
 @font-face {
-  font-family: "AppleSDGothicNeoM";
-  src: url("../font/AppleSDGothicNeoM.ttf");
+  font-family: "AppleSDGothicNeoH";
+  src: url("../font/AppleSDGothicNeoH.ttf");
+}
+@font-face {
+  font-family: "AppleSDGothicNeoL";
+  src: url("../font/AppleSDGothicNeoL.ttf");
 }
 
 * {
@@ -13,14 +17,45 @@
   color: black;
   font-family: "AppleSDGothicNeoM";
 }
+.wrap {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.slider_wrap {
+  margin: 0 auto;
+  text-align: center;
+}
+/* real main start ======== */
+.main_content {
+  position: absolute;
+  top: 55%;
+  left: 10%;
+}
+
+.main_content .write {
+  font-size: 79px;
+  color: white;
+}
+
+.sm_write {
+  font-size: 23px;
+  color: white;
+  font-family: "AppleSDGothicNeoL";
+}
+/* real main================== */
+
 #main_content {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  position: relative;
+  top: 30%;
+  left: 20%;
+  position: absolute;
   width: 1150px;
   height: 250px;
   margin: 0 auto;
   padding: 25px 0;
+  margin-top: 70px;
 }
 #latest_bd {
   position: absolute;

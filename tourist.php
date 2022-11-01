@@ -376,4 +376,4 @@ function closeOverlay() {
     getData();
 
 </script>
-</body>
+<?php include "./footer.php"; ?></body>

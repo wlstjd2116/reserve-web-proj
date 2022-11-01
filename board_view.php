@@ -81,5 +81,5 @@ mysqli_query($con, $sql);
 </section> 
 <footer>
 </footer>
-</body>
+<?php include "./footer.php"; ?></body>
 </html>

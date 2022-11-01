@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .slider {
+        width: 100%;
+        height: 900px;
+        margin: 0 auto;
+      }
+      .box {
+        text-align: center;
+        font-size: 60px;
+        color: #fff;
+        font-weight: bold;
+      }
+      .room1 {
+        background: url("./room/moun1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(70%);
+      }
+      .room2 {
+        background: url("./room/ve6.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(70%);
+        background-position: center;
+      }
+      .room3 {
+        background: url("./room/moun5.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(70%);
+        background-position: center;
+      }
+      .room4 {
+        background: url("./room/sea1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(70%);
+        background-position: center;
+      }
+      .room5 {
+        background: url("./room/sea3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(70%);
+        background-position: center;
+      }
+      .room6 {
+        background: url("./room/ve2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(70%);
+        background-position: center;
+      }
+      .room7 {
+        background: url("./room/sea4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(70%);
+        background-position: center;
+      }
+      .room8 {
+        background: url("./room/ve1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(70%);
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="slider1" class="slider">
+      <div class="room1">
+        <div class="rm_info1"></div>
+      </div>
+      <div class="room2"></div>
+      <div class="room3"></div>
+      <div class="room4"></div>
+      <div class="room5"></div>
+      <div class="room6"></div>
+      <div class="room7"></div>
+      <div class="room8"></div>
+    </section>
+  </body>
+  <script>
+    function Slider(target, type) {
+      // 상태
+      let index = 1;
+      let isMoved = true;
+      const speed = 1000; // ms
+
+      // 방향
+      const transform = "transform " + speed / 1000 + "s";
+      let translate = (i) => "translateX(-" + 100 * i + "%)";
+
+      // 슬라이더
+      const slider = document.querySelector(target);
+      const sliderRects = slider.getClientRects()[0];
+      slider.style["overflow"] = "hidden";
+
+      // 슬라이더 화면 컨테이너
+      const container = document.createElement("div");
+      container.style["display"] = "flex";
+      container.style["flex-direction"] = type === "V" ? "column" : "row";
+      container.style["width"] = sliderRects.width + "px";
+      container.style["height"] = sliderRects.height + "px";
+      container.style["transform"] = translate(index);
+      container.style["transition"] = "ease-out 1s";
+
+      // 슬라이더 화면 목록
+      let boxes = [].slice.call(slider.children);
+      boxes = [].concat(boxes[boxes.length - 1], boxes, boxes[0]);
+
+      // 슬라이더 화면 스타일
+      const size = boxes.length;
+      for (let i = 0; i < size; i++) {
+        const box = boxes[i];
+        box.style["flex"] = "none";
+        box.style["flex-wrap"] = "wrap";
+        box.style["height"] = "100%";
+        box.style["width"] = "100%";
+        container.appendChild(box.cloneNode(true));
+      }
+
+      // 처음/마지막 화면 눈속임 이벤트
+      container.addEventListener("transitionstart", function () {
+        isMoved = false;
+        setTimeout(() => {
+          isMoved = true;
+        }, speed);
+      });
+      container.addEventListener("transitionend", function () {
+        // 처음으로 순간이동
+        if (index === size - 1) {
+          index = 1;
+          container.style["transition"] = "none";
+          container.style["transform"] = translate(index);
+        }
+        // 끝으로 순간이동
+        if (index === 0) {
+          index = size - 2;
+          container.style["transition"] = "none";
+          container.style["transform"] = translate(index);
+        }
+      });
+
+      // 슬라이더 붙이기
+      slider.innerHTML = "";
+      slider.appendChild(container);
+
+      return {
+        move: function (i) {
+          if (isMoved === true) {
+            index = i;
+            container.style["transition"] = transform;
+            container.style["transform"] = translate(index);
+          }
+        },
+        next: function () {
+          if (isMoved === true) {
+            index = (index + 1) % size;
+            container.style["transition"] = transform;
+            container.style["transform"] = translate(index);
+          }
+        },
+        prev: function () {
+          if (isMoved === true) {
+            index = index === 0 ? index + size : index;
+            index = (index - 1) % size;
+            container.style["transition"] = transform;
+            container.style["transform"] = translate(index);
+          }
+        },
+      };
+    }
+
+    const s1 = new Slider("#slider1", "H");
+
+    setInterval(() => {
+      s1.next();
+    }, 3000);
+  </script>
+</html>

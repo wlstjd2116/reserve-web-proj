@@ -44,12 +44,12 @@
 					</ul> 
 				</div>  
 				<a href="#n" class="login_btn" onclick="javascript:document.frm.submit();"><span>로그인</span></a>
-				<!-- <a href="#n" class="login_btn" id="btnWork"><span>작업실적입력</span></a> -->
 				</fieldset>
                                     
 			</form>
-			</div> <!-- //login_form_wrap-->
+			</div>
 			</div>
 		</div> <!-- login_wrap end -->
+<?php include "./footer.php"; ?>
 </body>
 </html>

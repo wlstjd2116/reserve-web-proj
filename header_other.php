@@ -24,6 +24,9 @@ if (isset($_SESSION["userid"])) {
 		<div class = "intro_bg1">	
     <div id="top">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <a class="navbar-brand" href="pensionHome.php">
+      <img src="./image/logo2.png" alt="Logo" style="width:40px;">
+    </a>
         <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="pensionHome.php">HOME</a></li>
