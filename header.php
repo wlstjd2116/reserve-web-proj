@@ -34,8 +34,6 @@ if (isset($_SESSION["userid"])) {
                 <li class="nav-item"><a class="nav-link" href="reservation.php">RESERVE </a></li>
                 <li class="nav-item"><a class="nav-link" href="tourist.php">TOURIST</a></li>
                 <li class="nav-item"><a class="nav-link" href="board_list.php">BOARD</a></li>
-                <li class="nav-item"><a class="nav-link" href="notice_list.php">NOTICE</a></li>
-                <li class="nav-item"><a class="nav-link" href="qna_list.php">QNA</a></li>
                 <?php
                 if ($userid == "admin") { ?>
                     <li class="nav-item"><a class="nav-link" href="admin.php">MNG_PG</a> </li>

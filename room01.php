@@ -1,30 +1,16 @@
 <?php
-session_start();
-if (isset($_SESSION["userid"])) {
-  $userid = $_SESSION["userid"];
-} else {
-  $userid = "";
-}
 
 $con = mysqli_connect("localhost", "root", "", "test");
-$sql = "select * from tb_house";
+$sql = "select * from tb_house where house_id = 1";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result);
 
 $con = "";
 $sql = "";
-
-//if($_SESSION["userid"]){
-?>
-  		<!--<script>
-  			//location.replace("reservation.php");
-  		</script>-->
-  		<?php
-//exit;
-// }
 ?>
 <!doctype html>
 <meta charset="utf-8">
+<head>
 <title>네이처</title>
 		<link rel="stylesheet" type="text/css" href = "./css/style_room.css">
 		<link rel="stylesheet" type="text/css" href = "./css/common.css">
@@ -44,42 +30,9 @@ $sql = "";
 </head>
 <body>
 	<div class ="wrap">
-		<div class = "intro_bg">
-			<div class="header">
-				<ul class="nav">
-					<li><a href="pensionHome.php">HOME</a></li>
-					<li><a href="reservation.php">RESERVE</a></li>
-					<li><a href="reservation_status.php">RESERVATION STATUS</a></li>
-					<li><a href="board_list.php">BOARD</a></li>
-					<li><a href="notice_list.php">NOTICE</a></li>
-					<li><a href="qna_list.php">QNA</a></li>
-					
-					<?php if (!$userid) { ?>                
-                			<li><a href="member_form.php">회원 가입</a> </li>
-   					 <?php } else {$logged = $userid . "님"; ?>
-                
-						<li><a onclick="window.open('./survey.php','설문조사','left=200,top=200, scrollbars=no, toolbars=no, width=180, height=230')"border="0">SURVEY</a></li>
-						<li><?= $logged ?> </li>
-                <li><a href="member_modify_form.php">정보수정</a></li>
-                <li><a href="logout.php">로그아웃</a> </li>
-<?php } ?>
-				<li><?php if (!$userid) { ?>
-					</ul>
-						<form id="frm" name="frm" method="post" action="login.php">
-							<div class="whitefont">
-							ID:<input type="textbox" name="id" placeholder="ID">
-							PW:<input type="password" name="pass" placeholder="PW">
-							<button style ="color: black;" onclick="javascript:document.frm.submit();">로그인</button>
-							</div>
-						</form>
-					</li>	
-					                
-   					 <?php } ?>
-   					</ul>
+	<?php include "./header_other.php"; ?>
 
-   				</div>
-   			</div>
-<div class="r_wrap">
+			<div class="r_wrap">
 	<div class = "rm_wrap">
 		<div class = "rm_title">
 			<span>네이처(Nature)</span>

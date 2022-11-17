@@ -3,8 +3,8 @@
 <title>T&R 로그인</title>
 <script type="text/javascript" src="./js/login.js"></script>
 <head>
-    <link rel="stylesheet" href="./css/common.css">
-	<link rel="stylesheet" href="./css/login_form1.css">
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/login_form1.css">
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -44,8 +44,7 @@
 					</ul> 
 				</div>  
 				<a href="#n" class="login_btn" onclick="javascript:document.frm.submit();"><span>로그인</span></a>
-				</fieldset>
-                                    
+				</fieldset>                   
 			</form>
 			</div>
 			</div>

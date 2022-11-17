@@ -83,6 +83,7 @@
   width: 1200px;
   height: 700px;
   margin: 0 auto;
+  display: flex;
 }
 #board_list {
   color: #000;
@@ -151,4 +152,33 @@
   padding: 5px 20px;
   margin: 15px 0 40px 720px;
   cursor: pointer;
+}
+
+.left-container {
+  width: 20%;
+  height: 270px;
+  margin-top: 50px;
+  margin-right: 50px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 20px;
+}
+
+.left-container ul {
+  margin: 25px 0px 0px 50px;
+}
+
+.left-container ul a {
+  color: rgb(133, 133, 133);
+  font-size: 28px;
+}
+.lc-title {
+  margin-left: 50px;
+  margin-top: 35px;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.left-container ul a:hover {
+  color: black;
+  transition: linear 0.4s;
 }

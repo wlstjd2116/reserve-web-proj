@@ -21,7 +21,7 @@
 </head>
 <body>
 <div class="wrap">
-<?php include "./header.php"; ?>
+<?php include "./header_other.php"; ?>
 <div class ="slider_wrap">
 <?php include "./slider.html"; ?>
 </div>

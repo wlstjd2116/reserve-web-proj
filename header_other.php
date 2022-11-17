@@ -34,8 +34,6 @@ if (isset($_SESSION["userid"])) {
                 <li class="nav-item"><a class="nav-link" href="reservation.php">RESERVE </a></li>
                 <li class="nav-item"><a class="nav-link" href="tourist.php">TOURIST</a></li>
                 <li class="nav-item"><a class="nav-link" href="board_list.php">BOARD</a></li>
-                <li class="nav-item"><a class="nav-link" href="notice_list.php">NOTICE</a></li>
-                <li class="nav-item"><a class="nav-link" href="qna_list.php">QNA</a></li>
                 <?php
                 if ($userid == "admin") { ?>
                     <li class="nav-item"><a class="nav-link" href="admin.php">MNG_PG</a> </li>
@@ -47,7 +45,7 @@ if (isset($_SESSION["userid"])) {
                 
                 <li class="nav-item"><a class="nav-link" onclick="window.open('./survey.php','설문조사','left=200,top=200, scrollbars=no, toolbars=no, width=180, height=230')"border="0">SURVEY </a></li>
                 <li class="nav-item"><span class="navbar-text" style="color:white;"><?= $logged ?></span> </li>
-                <li class="nav-item"><a class="nav-link" href="member_modify_form.php">정보수정</a></li>
+                <li class="nav-item"><a class="nav-link" href="my_page.php">내 정보</a></li>
                 <li class="nav-item"><a class="nav-link" href="logout.php">로그아웃</a></li>
 <?php }
                 if (!$userid) { ?>

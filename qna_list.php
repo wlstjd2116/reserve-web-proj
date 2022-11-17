@@ -64,6 +64,19 @@ if ($result["scnt"] > 0) {
 <section>
 
   <div id = "list_box">
+  <div class="left-container">
+  <div class="lc-title">
+    Board
+  </div>
+  
+  <ul>
+    <li><a href="./board_list.php"> Review </a></li>
+    <li><a href="./notice_list.php"> Notice </a></li>
+    <li><a href="./qna_list.php"> QnA </a></li>
+  </ul>
+  
+
+  </div>
   <div class="container">
   <h2 style="margin-top:70px; font-size:3em" ><b>Q</b>nA <b>B</b>oard</h2>
   <p>사용자에게 제공될 질문 게시판입니다. </p>   

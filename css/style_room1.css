@@ -102,8 +102,7 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 260px;
-  margin-bottom: 400px;
+  height: 250px;
 }
 
 .table_center {
@@ -117,6 +116,13 @@ h1 {
 .table_text {
   width: 400px;
   text-align: center;
+}
+.header {
+  display: flex;
+  width: 1280px;
+  margin: auto;
+
+  height: 86px;
 }
 
 .nav {
@@ -224,14 +230,41 @@ h5 {
   display: inline-block;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .content_wrap .top_box .map_box .pic_box {
+  position: absolute;
   display: inline-block;
+  right: 0;
   width: 38%;
-  float: right;
-  height: 500px;
-  background-color: black;
+  height: 300px;
+}
+
+.content_wrap .top_box .map_box .pic_box .sub_img {
+  width: 100%;
+}
+
+.content_wrap .top_box .map_box .pic_box .sub_img > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.content_wrap .top_box .map_box .pic_box .sub_img > ul > li {
+  width: 30%;
+  height: 90px;
+  display: flex;
+  margin-top: 10px;
+  /* background-image: url("http://tong.visitkorea.or.kr/cms/resource/60/2876060_image2_1.jpg"); */
+  background-size: cover;
+}
+
+.content_wrap .top_box .map_box .pic_box .sub_img > ul > li > img {
+  width: 100%;
+  height: 100%;
 }
 
 .content_wrap .line {
@@ -248,11 +281,6 @@ h5 {
   margin: 0 auto;
 }
 
-.content_wrap .place_box .tourlist_top {
-  text-align: center;
-  /* margin-top: 10px; */
-}
-
 .info-title {
   display: block;
   background: #50627f;
@@ -262,13 +290,6 @@ h5 {
   line-height: 22px;
   border-radius: 4px;
   padding: 0px 10px;
-}
-
-.content_wrap .place_box .tour_content {
-  width: 100%;
-  /* height: 1000px; */
-  /* background-color: red; */
-  font-size: 30px;
 }
 
 .custom_overlay {
@@ -366,4 +387,69 @@ h5 {
 }
 .popup_info .link {
   color: #5085bb;
+}
+
+/* 관광지 상세정보 css */
+.tourlist_top {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.tourlist_top::before {
+  content: "";
+  width: 50px;
+  height: 30px;
+  background-color: #009970;
+  margin: 5px 10px 0px 0px;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+}
+
+.content_wrap .place_box .tour_content {
+  width: 100%;
+  height: 600px;
+  font-size: 20px;
+}
+
+.tour_content .info_wrap .info_default {
+  width: 100%;
+  height: 50px;
+  /* background-color: red; */
+}
+
+.tour_content .info_wrap .info_default p {
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 50px;
+}
+
+.tour_content .info_wrap .info_default p:first-child {
+  width: 20%;
+  /* background-color: red; */
+  padding-right: 10px;
+}
+
+.tour_content .info_wrap .info_default p:nth-child(2) {
+  margin-left: 50px;
+  width: 70%;
+}
+
+.tour_content .info_wrap .service {
+  height: 100%;
+}
+
+.tour_content .info_wrap .service > span {
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  bottom: 50%;
+}
+
+.tour_content .info_wrap .service > ul {
+  width: 70%;
+  display: inline-block;
+  margin-left: 40px;
 }

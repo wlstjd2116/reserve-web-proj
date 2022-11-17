@@ -195,6 +195,9 @@ let today = new Date();
 let year = today.getFullYear(); // 년도
 let month = today.getMonth() + 1;  // 월
 let date = today.getDate();  // 날짜
+if(date < 10){
+   date = "0"+date;
+}
 let day = today.getDay();  // 요일
 
 let sumToday = year + "-" + month +"-"+ date;

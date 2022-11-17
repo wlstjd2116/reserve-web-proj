@@ -1,81 +1,46 @@
 <?php
-session_start();
-if (isset($_SESSION["userid"])) {
-  $userid = $_SESSION["userid"];
-} else {
-  $userid = "";
-}
+$con = mysqli_connect("localhost", "root", "", "test");
+$sql = "select * from tb_house where house_id = 2";
+$result = mysqli_query($con, $sql);
+$row = mysqli_fetch_array($result);
 
-//if($_SESSION["userid"]){
-?>
-  		<!--<script>
-  			//location.replace("reservation.php");
-  		</script>-->
-  		<?php
-//exit;
-// }
+$con = "";
+$sql = "";
 ?>
 <!doctype html>
 <meta charset="utf-8">
-<title>자연룸</title>
-		<link rel="stylesheet" type="text/css" href = "./css/style_room.css">
-		<link rel="stylesheet" type="text/css" href = "./css/common.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<title>마운틴</title>
 <head>
- 
+ <link rel="stylesheet" type="text/css" href = "./css/style_room.css">
+		<link rel="stylesheet" type="text/css" href = "./css/common.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.3,npm/fullcalendar@5.11.3/locales-all.min.js,npm/fullcalendar@5.11.3/locales-all.min.js,npm/fullcalendar@5.11.3/main.min.js"></script>
+<script src="jquery.bpopup2.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class ="wrap">
-		<div class = "intro_bg">
-			<div class="header">
-				<ul class="nav">
-					<li><a href="pensionHome.php">HOME</a></li>
-					<li><a href="reservation.php">RESERVE</a></li>
-					<li><a href="reservation_status.php">RESERVATION STATUS</a></li>
-					<li><a href="board_list.php">BOARD</a></li>
-					<li><a href="notice_list.php">NOTICE</a></li>
-					<li><a href="qna_list.php">QNA</a></li>
-					
-					<?php if (!$userid) { ?>                
-                			<li><a href="member_form.php">회원 가입</a> </li>
-   					 <?php } else {$logged = $userid . "님"; ?>
-                
-						<li><a onclick="window.open('./survey.php','설문조사','left=200,top=200, scrollbars=no, toolbars=no, width=180, height=230')"border="0">SURVEY</a></li>
-						<li><?= $logged ?> </li>
-                <li><a href="member_modify_form.php">정보수정</a></li>
-                <li><a href="logout.php">로그아웃</a> </li>
-<?php } ?>
-				<li><?php if (!$userid) { ?>
-					</ul>
-						<form id="frm" name="frm" method="post" action="login.php">
-							<div class="whitefont">
-							ID:<input type="textbox" name="id" placeholder="ID">
-							PW:<input type="password" name="pass" placeholder="PW">
-							<button style ="color: black;" onclick="javascript:document.frm.submit();">로그인</button>
-							</div>
-						</form>
-					</li>	
-					                
-   					 <?php } ?>
-   					</ul>
-
-   				</div>
-   			</div>
+<div class ="wrap">
+	<?php include "./header_other.php"; ?>
 <div class="r_wrap">
 	<div class = "rm_wrap">
 		<div class = "rm_title">
-			<span>베르데(Verde)</span>
+			<span>마운틴(Mountain)</span>
 		</div>
 		
 		
-		<center><img src="./room/ve1.jpg" width="600px" height="320px"></center>
+		<center><img src="./room/moun1.jpg" width="600px" height="320px"></center>
 		<div class="rm_explain">
-		베르데(Verde)는<br>
+		마운틴(Mountain)은<br>
 
-		이탈리아어로 녹색을 의미합니다<br>
+		영어로 산을 의미합니다.<br>
 		<br><br>
 		자연친화적인 인테리어와 조용한 분위기,<br>
 		프라이빗한 실내바비큐장과 스파(Spa)는<br>
@@ -83,10 +48,12 @@ if (isset($_SESSION["userid"])) {
 		매력적인 룸입니다<br>
 		<br>
 
-		베르데(Verde)에서<br>
+		마운틴(Mountain)에서<br>
 		사랑하는 사람과 매력적인 아침을 맞이하세요!<br>
 		<br><br>
-		<a href="#" class = "btn btn-dark">실시간 예약</a>
+		<a class="btn btn-dark"onclick="javascript:execReservation('<?= $row["house_id"] ?>','<?= $row["house_name"] ?>');">
+					실시간 예약
+        </a>
 		<br>
 		<br><br><br>
 		<strong>객실정보</strong><br>
@@ -114,16 +81,103 @@ if (isset($_SESSION["userid"])) {
 		헤어샴푸, 린스, 헤어드라이기, 타올, 휴지,각티슈
 		</div> 
 		<div class ="show_img">
-		<center><img src="./room/ve2.jpg" width="1000px" height="600px"></center>
-	   			<center><img src="./room/ve3.jpg" width="1000px" height="600px"></center>
-	   			<center><img src="./room/ve4.jpg" width="1000px" height="600px"></center>
-	   			<center><img src="./room/ve5.jpg" width="1000px" height="600px"></center>
-	   			<center><img src="./room/ve6.jpg" width="1000px" height="600px"></center>
+		<center><img src="./room/moun2.jpg" width="1000px" height="600px"></center>
+	   			<center><img src="./room/moun3.jpg" width="1000px" height="600px"></center>
+	   			<center><img src="./room/moun4.jpg" width="1000px" height="600px"></center>
+	   			<center><img src="./room/moun5.jpg" width="1000px" height="600px"></center>
+	   			<center><img src="./room/moun6.jpg" width="1000px" height="600px"></center>
    			<center><div class="room_rs">
 		</div>
 	</div>
 </div> <!-- wrap end -->
-	   			
+<div class="box box-success box-after" id="winReservation">
+		<form name=frm method="post" action="reservation_ok.php">		
+		<input type="hidden" name="insert_houseid" id="insert_houseid" value="">
+		<div style="width:100%; height:33px; margin-left:20px">
+			<div style="width:30%;float:left; color:black">
+				펜션이름:
+			</div>
+			<div style="width:70%;float:left; color:black" id="divHouseName">
+			</div>
+		</div>
+		<div style="width:100%; height:33px; margin-left:20px; color:black">
+			<div style="width:30%;float:left; color:black">
+				예약날짜: <input class="datepicker1" name="datepicker1">
+			</div>
+		</div>
+		<div style="width:100%; height:33px; margin-left:20px">
+			<br><div style="float:left; color:black">
+				숙박인원:
+			</div>
+			<div style="width:70%;float:left;color:black">
+				<input type="text" name="total_man" id="total_man" style="width:50px;color:black">명
+			</div>
+		</div>
+		</form>
+		<div style="width:100%; height:33px; margin-top:30px; text-align:center">
+			<button style="background-color:gray; color:white; border:1px solid #222222" onclick="javascript:saveReservation();">예약하기</button>
+		</div>
+		</div><!-- /.box -->
 <?php include "./footer.php"; ?>
    		</div>
    	</body>
+	<script>
+
+		   // datepicker 
+$.datepicker.setDefaults({
+dateFormat: 'yy-mm-dd',
+prevText: '이전 달',
+nextText: '다음 달',
+monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+showMonthAfterYear: true,
+yearSuffix: '년'
+});
+let today = new Date();   
+
+let year = today.getFullYear(); // 년도
+let month = today.getMonth() + 1;  // 월
+let date = today.getDate();  // 날짜
+let day = today.getDay();  // 요일
+
+let sumToday = year + "-" + month +"-"+ date;
+$('.datepicker1').val(sumToday);
+$(function(){
+   $('.datepicker1').datepicker();
+});
+function execReservation(houseID, houseName)
+	{
+		<?php if ($userid == "") { ?>
+		alert("먼저 로그인을 해주세요."); return false;
+		<?php } ?>
+		$("#insert_houseid").val(houseID);
+		$("#divHouseName").html(houseName);
+
+		$('#winReservation').bPopup();
+	}
+
+   // 예약 db에 넣는 함수, 유효성검사
+function saveReservation()
+{
+   if(!$.trim($('.datepicker1').val()))
+   {
+      alert("예약 날짜를 입력해주십시오asd");
+      return false;
+   }
+   if(!$.trim($("#total_man").val()))
+   {
+      alert("숙박인원을 입력해주십시오");
+      return false;
+   }
+   if(isNaN($("#total_man").val()))
+   {
+      alert("숙박인원을 숫자로 입력해주십시오");
+      return false;
+   }
+   document.frm.submit();
+}	
+	</script>
+</html>
