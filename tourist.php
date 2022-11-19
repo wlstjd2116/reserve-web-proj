@@ -8,7 +8,7 @@
 
 <head>
 </head>
-<body style="height: 1500px;"><?php include "./header_other.php"; ?>
+<body><?php include "./header_other.php"; ?>
         <div class="content_wrap">
             <div class="top_box">
             <div class="tourlist_top"><b>주변 관광지</b></div>
@@ -43,7 +43,7 @@ var tourinfo = [];
 function getData(callback){
         return new Promise(function (resolve, reject){
             setTimeout(function (){
-                $.get(`https://apis.data.go.kr/B551011/KorService/areaBasedList?numOfRows=30&MobileOS=WEB&MobileApp=webp&serviceKey=yUEUsLFTDX6iYs09QHj2GDFRUCYvs9%2BWVZOQzeTsZZh%2B4iNC%2F3Noxf0y0dI10Q6wYD0O0y0BYFH9nsFvRuFZaQ%3D%3D&_type=json&areaCode=35&sigunguCode=2`, 
+                $.get(`https://apis.data.go.kr/B551011/KorService/areaBasedList?numOfRows=100&MobileOS=WEB&MobileApp=webp&serviceKey=yUEUsLFTDX6iYs09QHj2GDFRUCYvs9%2BWVZOQzeTsZZh%2B4iNC%2F3Noxf0y0dI10Q6wYD0O0y0BYFH9nsFvRuFZaQ%3D%3D&_type=json&areaCode=35&sigunguCode=2`, 
                 function (data) {
                     if(data){
                         var tour_content = ``;

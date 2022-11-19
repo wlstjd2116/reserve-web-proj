@@ -28,15 +28,10 @@ $row = mysqli_fetch_array($result);
 $pass = $row["pass"];
 $name = $row["name"];
 
-$email = explode("@", $row["email"]);
-$email1 = $email[0];
-$email2 = $email[1];
-
 mysqli_close($con);
 ?>
 
 <script>
-	var Dflag = false;
 	var Pflag = false; 
 
 	 function validCheck(){
@@ -61,18 +56,19 @@ mysqli_close($con);
 			return;
 		}
 		if ( Pflag == true ){
-			console.log(Dflag, Pflag);
+			console.log(Pflag);
 			document.member_form.submit();
 		}else {return;} 
 	}
 </script>
 <div class="inputWrap">
-<div class="title">정보 수정</div>
+<div class="member-title">정보 수정</div>
 	<div class="side-body"> 
 		<div class="left-side">
 		<ul>
 			<li><a href="./my_page.php">예약 내역</a></li>
-			<li><a href="./member_modify_form.php">정보 수정</a></li>
+			<li><a href="./member_modify_form.php" style="color:black;">정보 수정</a></li>
+			<li style="margin-top:50px;"><a href="./member_delete_form.php">회원 탈퇴</a></li>
 		</ul>
 		</div>
 		<div class="right-side">

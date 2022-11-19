@@ -18,10 +18,14 @@ if (isset($_SESSION["userid"])) {
 
 	<!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+body {
+  background-color: #ebeef1;
+}
+</style>
 
 </head>
 <div class ="wrap">
-		<div class = "intro_bg1">	
     <div id="top">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
     <a class="navbar-brand" href="pensionHome.php">
@@ -54,3 +58,4 @@ if (isset($_SESSION["userid"])) {
                 ?>
 						
 			</div>
+                </div>

@@ -247,3 +247,39 @@ h5 {
   margin: 0 auto;
   margin-top: 30px;
 }
+
+.star-rating {
+  width: 150px;
+}
+.star-rating,
+.star-rating span {
+  display: inline-block;
+  height: 27px;
+  overflow: hidden;
+  background: url("../image/star.png") no-repeat;
+}
+.star-rating span {
+  background-position: left bottom;
+  line-height: 0px;
+  vertical-align: top;
+}
+.span1 {
+  width: 53.2%;
+}
+.span2 {
+  width: 70%;
+}
+.span3 {
+  width: 90%;
+}
+.span4 {
+  width: 20%;
+}
+
+.span5 {
+  width: 40%;
+}
+
+.span6 {
+  width: 10%;
+}

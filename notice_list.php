@@ -62,7 +62,7 @@ if ($result["scnt"] > 0) {
 <body> 
 <?php include "./header_other.php"; ?>
     
-<section>
+<section2>
 
   <div id = "list_box">
   <div class="left-container">
@@ -72,8 +72,8 @@ if ($result["scnt"] > 0) {
   
   <ul>
     <li><a href="./board_list.php"> Review </a></li>
-    <li><a href="./notice_list.php"> Notice </a></li>
-    <li><a href="./qna_list.php"> QnA </a></li>
+    <li><a href="./notice_list.php" style="color : black;"> Notice </a></li>
+    <li><a href="./qna_list.php" > QnA </a></li>
   </ul>
   
 
@@ -205,7 +205,7 @@ if ($total_page >= 2 && $page != $total_page) {
 			</ul>
       </div>
 	</div> <!-- board_box -->
-</section> 
+</section2> 
 			
 		<!-- intro end -->
 

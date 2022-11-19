@@ -21,7 +21,22 @@
 
 <section>
 <?php include "./header_other.php"; ?>
-   	<div id="board_box">
+<div id = "notice-wrap">
+<div class="view-width">
+<div class="left-container2">
+  <div class="lc-title">
+    Board
+  </div>
+  
+  <ul>
+    <li><a href="./board_list.php" > Review </a></li>
+    <li><a href="./notice_list.php"> Notice </a></li>
+    <li><a href="./qna_list.php" style="color : black;"> QnA </a></li>
+  </ul>
+  
+
+  </div>
+<div id="board_box-notice">
 	    <h3 class="title">
 			게시판 > 내용보기
 		</h3>
@@ -51,6 +66,17 @@ $new_hit = $hit + 1;
 $sql = "update notice set hit=$new_hit where num=$num";
 mysqli_query($con, $sql);
 ?>		
+<script>
+$(document).ready(function(){
+	var currentPosition = parseInt($(".left-container2").css("top"));
+console.log(currentPosition)
+  $(window).scroll(function() {
+    var position = $(window).scrollTop(); 
+    $(".left-container2").stop().animate({"top":position+currentPosition+"px"},800);
+  });
+});
+</script>
+
 	    <ul id="view_content">
 			<li>
 				<span class="col1"><b>제목 :</b> <?= $subject ?></span>
@@ -76,7 +102,25 @@ mysqli_query($con, $sql);
         <li><button class="btn btn-secondary" style="color:white;" onclick="location.href='notice_delete.php?num=<?= $num ?>&page=<?= $page ?>'">삭제</button></li>
         <?php } ?>	
 		</ul>
+		
 	</div> <!-- board_box -->
+				</div>
+
 </section> 
-<?php include "./footer.php"; ?></body>
+<div class = "ft_wrap4">
+    <div class ="center">
+        <span>상호명 : T&R House, with Lee Jae Seok</span>
+        <span>대표자 : 황진성</span>
+        <span>프로젝트명 : 숙소 예약 홈페이지</span><br>
+        <span>국민 940302-00-106374</span>
+        <span>황진성 010-3798-4427</span>
+        <span>경북 경주시 경주로 80</span>
+        
+        <span> Design by JinSeong</span>
+    </div>
+</div>
+</div>
+   
+
+</body>
 </html>

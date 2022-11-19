@@ -21,9 +21,10 @@ if (!$userid) {
         ";
   exit();
 }
-
+$r_name = $_POST["r_name"];
 $subject = $_POST["subject"];
 $content = $_POST["content"];
+$rating = $_POST["rating"];
 
 $subject = htmlspecialchars($subject, ENT_QUOTES);
 $content = htmlspecialchars($content, ENT_QUOTES);
@@ -76,9 +77,9 @@ if ($upfile_name && !$upfile_error) {
 $con = mysqli_connect("localhost", "root", "", "test");
 
 $sql = "insert into board (id, name, subject, content, 
-	regist_day, hit,  file_name, file_type, file_copied) ";
+	regist_day, hit,  file_name, file_type, file_copied, rating, r_name) ";
 $sql .= "values('$userid', '$username', '$subject', '$content', '$regist_day', 0, ";
-$sql .= "'$upfile_name', '$upfile_type', '$copied_file_name')";
+$sql .= "'$upfile_name', '$upfile_type', '$copied_file_name', $rating, '$r_name')";
 mysqli_query($con, $sql); // $sql 에 저장된 명령 실행
 
 // 포인트 부여하기

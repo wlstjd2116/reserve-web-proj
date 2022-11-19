@@ -37,27 +37,49 @@ $result = mysqli_query($con, $sql);
  <div class="side-body"> 
     <div class="left-side">
     <ul>
-        <li><a href="./my_page.php" style="color:black;">예약 내역</a></li>
+        <li><a href="./my_page.php">예약 내역</a></li>
         <li><a href="./member_modify_form.php">정보 수정</a></li>
-        <li style="margin-top:50px;"><a href="./member_delete_form.php">회원 탈퇴</a></li>
+        <li style="margin-top:50px;"><a href="./member_delete_form.php" style="color:black;">회원 탈퇴</a></li>
     </ul>
     </div>
  <div class="right-side">   
-    <dd>예약 내역<dd>
-        <?php while ($res = mysqli_fetch_array($result)) { ?>
-          <div class="card"> 
-            <!-- <?= $res["house_name"] ?> -->
-            <?php if (isset($res["house_id"])) { ?> 
-                <img src="./room/view_room/0<?= $res["house_id"] ?>.jpg" width=100%; height=160px;>
-                <pps><?= $res["house_name"] ?></pps>
-                <pps2><?= $res["rs_date"] ?></pps2>
-                <?php } ?>
-          </div>
-          <?php } ?> 
+    <dd>회원 탈퇴<dd>
+        <div class="delete-card">
+            <br>
+            한 번 탈퇴하시면 복구가 불가능합니다. 정말 탈퇴하시겠습니까?
+            <br>
+            <pp>네. 탈퇴하겠습니다.</pp><input type="checkbox" name="ck" id="ck">
+            <br>
+            <button class="btn-delete">탈퇴</button>
+        </div>
  </div>
 </div><!-- side-body end -->
 
 </div>
+<script>
+    let ck = false;
+    $('#ck').click(function() {
+        if($('#ck').is(':checked')){
+            ck = true;
+        }
+        else {
+            ck = false;
+        }
+        console.log(ck);
+    })
+    
+    console.log(ck);
+    $('.btn-delete').click(function(){
+        if (ck == true){
+            location.href="member_delete.php";
+        }
+        else {
+            alert("체크박스 체크 후 다시 탈퇴를 신청해주세요.");
+            return;
+        }
+        
+    });
+</script>
 </body>
 </html>
 

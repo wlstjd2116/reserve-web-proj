@@ -3,7 +3,16 @@
   font-family: "AppleSDGothicNeoM";
   src: url("../font/AppleSDGothicNeoM.ttf");
 }
+html {
+  height: 100%;
+}
 
+section {
+  background-color: #ebeef1;
+}
+section2 {
+  background-color: white;
+}
 * {
   list-style: none;
   text-decoration: none;
@@ -16,25 +25,22 @@
 #board_box {
   position: relative;
   width: 700px;
-  height: 700px;
+  height: auto;
   padding: 5px 15px;
   margin: 30px auto;
-  /* background-color: rgba(255, 255, 255, 0.6); */
+  background-color: white;
+  border-radius: 12px;
 }
-/* #board_box h2 {
-  color: #000;
-  margin-top: 30px;
-  padding: 5px;
-  border-bottom: solid 2px black;
-  font-size: 23px;
+#board_box-notice {
+  position: relative;
+  top: 10%;
+  width: 700px;
+  height: auto;
+  padding: 5px 15px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 12px;
 }
-
-#board_box h2 b {
-  color: #000;
-  margin-top: 30px;
-  padding: 5px;
-  font-size: 23px;
-} */
 #board_form span {
   display: inline-block;
 }
@@ -77,6 +83,22 @@
   padding: 5px 10px;
   cursor: pointer;
   color: rgb(25, 25, 112);
+}
+
+#board_box-notice .buttons {
+  text-align: right;
+  margin: 20px 0 40px 0;
+}
+#board_box-notice .buttons li {
+  display: inline;
+}
+#board_box-notice .buttons button {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: rgb(25, 25, 112);
+}
+#board_title {
+  padding-top: 30px;
 }
 /* 게시판 목록보기(board_list.php) */
 #list_box {
@@ -137,6 +159,14 @@
   border-bottom: solid 2px #516e7f;
   font-size: 20px;
 }
+
+#board_box-notice .title {
+  margin-top: 30px;
+  padding: 10px;
+
+  border-bottom: solid 2px #516e7f;
+  font-size: 20px;
+}
 #view_content li:nth-child(1) {
   padding: 15px;
   border-bottom: solid 1px #aaaaaa;
@@ -161,6 +191,35 @@
   margin-right: 50px;
   background-color: rgb(240, 240, 240);
   border-radius: 20px;
+  box-shadow: 3px 3px 15px -5px grey;
+  position: relative;
+}
+
+.left-container2 {
+  width: 20%;
+  height: 270px;
+  margin-top: 50px;
+  margin-right: 50px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 20px;
+  box-shadow: 3px 3px 15px -5px grey;
+  position: relative;
+  top: -100px;
+}
+
+.left-container2 ul {
+  margin: 25px 0px 0px 50px;
+}
+
+.left-container2 ul a {
+  color: rgb(133, 133, 133);
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.left-container2 ul a:hover {
+  color: black;
+  transition: linear 0.4s;
 }
 
 .left-container ul {
@@ -170,6 +229,7 @@
 .left-container ul a {
   color: rgb(133, 133, 133);
   font-size: 28px;
+  text-decoration: none;
 }
 .lc-title {
   margin-left: 50px;
@@ -181,4 +241,139 @@
 .left-container ul a:hover {
   color: black;
   transition: linear 0.4s;
+}
+
+.reply {
+  width: 100%;
+  height: auto;
+}
+
+.rep-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.bd_wrap {
+  position: relative;
+  background-color: #ebeef1;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 280px;
+  border-radius: 10px;
+}
+
+#notice-wrap {
+  width: 100%;
+  height: 700px;
+}
+
+.rep_contents {
+  width: 88%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(150, 150, 150);
+  box-shadow: 10px grey;
+  padding: 10px;
+}
+.btn-add-rep {
+  width: 11%;
+  border-radius: 6px;
+  border: 1px solid rgb(35, 167, 255);
+  box-shadow: 10px grey;
+  background-color: #1985ff;
+  color: white;
+}
+.re-part {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.re-part2 {
+  display: inline-block;
+}
+
+.rep-writer {
+  font-size: 19px;
+}
+.rep-time::before {
+  content: "";
+  width: 200px;
+  height: 99px;
+  background-color: black;
+}
+
+.rep-time {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+.view-width {
+  width: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.view-width2 {
+  width: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.starR {
+  background: url("http://miuu227.godohosting.com/images/icon/ico_review.png") no-repeat right 0;
+  background-size: auto 100%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+.starR.on {
+  background-position: 0 0;
+}
+#myform fieldset {
+  display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+  border: 0; /* 필드셋 테두리 제거 */
+}
+#myform input[type="radio"] {
+  display: none; /* 라디오박스 감춤 */
+}
+#myform label {
+  font-size: 3em; /* 이모지 크기 */
+  color: transparent; /* 기존 이모지 컬러 제거 */
+  text-shadow: 0 0 0 #f0f0f0; /* 새 이모지 색상 부여 */
+}
+#myform label:hover {
+  text-shadow: 0 0 0 rgb(255, 235, 52); /* 마우스 호버 */
+}
+#myform label:hover ~ label {
+  text-shadow: 0 0 0 rgb(255, 235, 52); /* 마우스 호버 뒤에오는 이모지들 */
+}
+#myform fieldset {
+  display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+  direction: rtl; /* 이모지 순서 반전 */
+  border: 0; /* 필드셋 테두리 제거 */
+}
+#myform input[type="radio"]:checked ~ label {
+  text-shadow: 0 0 0 rgb(255, 235, 52); /* 마우스 클릭 체크 */
+}
+
+.star-box {
+  width: auto;
+  height: auto;
+  background-color: rgb(240, 240, 240);
+  border-radius: 4px;
+  border: 1px solid rgb(150, 150, 150);
+  padding: 7px;
+  margin-bottom: 20px;
+}
+
+.rv-content {
+  margin-top: 15px;
 }

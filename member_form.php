@@ -116,11 +116,6 @@
     <label for="name" style="float:left;"><font style="color:red;">*</font> name:</label>
     <input type="text" class="form-control" placeholder="Enter name" name="name" required>
   </div>
-
-  <div class="form-group">
-    <label for="email" style="float:left;"><font style="color:red;">*</font> email:</label>
-    <input type="text" class="form-control" placeholder="Enter email" name="email" required>
-  </div>
   
   <br>
   <input type="button" class="btn btn-primary" onClick="nullCheck();" value="Submit">

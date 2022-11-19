@@ -61,8 +61,18 @@ if ($result["scnt"] > 0) {
 </head>
 <body> 
 <?php include "./header_other.php"; ?>
-    
-<section>
+    <script>
+      $(document).ready(function(){
+        
+var currentPosition = parseInt($(".left-container").css("top"));
+console.log(currentPosition)
+  $(window).scroll(function() {
+    var position = $(window).scrollTop(); 
+    $(".left-container").stop().animate({"top":position+currentPosition+"px"},800);
+  });
+      })
+      </script>
+<section2>
 
   <div id = "list_box">
   <div class="left-container">
@@ -71,7 +81,7 @@ if ($result["scnt"] > 0) {
   </div>
   
   <ul>
-    <li><a href="./board_list.php"> Review </a></li>
+    <li><a href="./board_list.php" style="color : black;"> Review </a></li>
     <li><a href="./notice_list.php"> Notice </a></li>
     <li><a href="./qna_list.php"> QnA </a></li>
   </ul>
@@ -103,7 +113,7 @@ if ($result["scnt"] > 0) {
         <th>No</th>
         <th>Title</th>
         <th>Writer</th>
-        <th>File</th>
+        <th>Rating</th>
         <th>Date</th>
         <th>View</th>
       </tr>
@@ -140,6 +150,8 @@ for ($i = $start; $i < $start + $scale && $i < $total_record; $i++) {
   // 가져올 레코드로 위치(포인터) 이동
   $row = mysqli_fetch_array($result);
   // 하나의 레코드 가져오기
+  $r_name = $row["r_name"];
+  $rating = $row["rating"];
   $num = $row["num"];
   $id = $row["id"];
   $name = $row["name"];
@@ -151,13 +163,17 @@ for ($i = $start; $i < $start + $scale && $i < $total_record; $i++) {
   } else {
     $file_image = " ";
   }
+  $rated = "";
+  for ($j = 0; $j < $rating; $j++) {
+    $rated = $rated . "⭐";
+  }
   ?>
   <tbody>
       <tr>
         <td><?= $number ?></td>
-        <td ><a href="board_view.php?num=<?= $num ?>&page=<?= $page ?>" style="color:black;"><?= $subject ?></a></td>
+        <td><a href="board_view.php?num=<?= $num ?>&page=<?= $page ?>" style="color:black;">[<?= $r_name ?>]<?= $subject ?></a></td>
         <td><?= $id ?></td>
-        <td><?= $file_image ?></td>
+        <td><?= $rated ?></td>
         <td><?= $regist_day ?></td>
         <td><?= $hit ?></td>
 </div>
@@ -168,8 +184,6 @@ mysqli_close($con);
 ?>
     </tbody>
   </table>
-
-  
 			<ul id="page_num"> 	
 <?php
 if ($total_page >= 2 && $page >= 2) {
@@ -202,11 +216,12 @@ if ($total_page >= 2 && $page != $total_page) {
 			</ul>
       </div>
 	</div> <!-- board_box -->
-</section> 
+</section2> 
 </div> <!-- list_box -->			
 		<!-- intro end -->
 
 
     <br><br>
-<?php include "./footer.php"; ?></body>
+<?php include "./footer.php"; ?>
+</body>
 </html>

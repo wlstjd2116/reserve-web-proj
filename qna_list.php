@@ -2,7 +2,7 @@
 error_reporting(0);
 ini_set("display_errors", 0);
 
-$sql = "select count(*) as cnt from notice";
+$sql = "select count(*) as cnt from qna";
 $con = mysqli_connect("localhost", "root", "", "test");
 $rs = mysqli_query($con, $sql);
 $cnt = mysqli_fetch_array($rs);
@@ -58,10 +58,18 @@ if ($result["scnt"] > 0) {
 
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+html{
+  background-color: #ebeef1;
+}
+body {
+  background-color: #ebeef1;
+}
+</style>
 </head>
 <body> <?php include "./header_other.php"; ?>
     
-<section>
+<section2>
 
   <div id = "list_box">
   <div class="left-container">
@@ -72,7 +80,7 @@ if ($result["scnt"] > 0) {
   <ul>
     <li><a href="./board_list.php"> Review </a></li>
     <li><a href="./notice_list.php"> Notice </a></li>
-    <li><a href="./qna_list.php"> QnA </a></li>
+    <li><a href="./qna_list.php" style="color : black;"> QnA </a></li>
   </ul>
   
 
@@ -200,10 +208,10 @@ if ($total_page >= 2 && $page != $total_page) {
 			</ul>
       </div>
 	</div> <!-- board_box -->
-</section> 
-			
+</section2> 
+</div>
 		<!-- intro end -->
+<?php include "./footer.php"; ?>
 
-
-<?php include "./footer.php"; ?></body>
+</body>
 </html>

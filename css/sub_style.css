@@ -2,7 +2,9 @@
   font-family: "AppleSDGothicNeoM";
   src: url("../font/AppleSDGothicNeoM.ttf");
 }
-
+html {
+  height: 100%;
+}
 * {
   list-style: none;
   text-decoration: none;
